@@ -53,9 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['change_password'])) {
             $stmt_update_password = $conn->prepare($sql_update_password);
             $stmt_update_password->bind_param('si', $hashed_password, $user_id);
             if ($stmt_update_password->execute()) {
-                echo "Password changed successfully.";
-                // Refresh the page to reflect the changes
-                header("Location: profile.php");
+                header("Location: profile.php?status=password_changed");
                 exit();
             } else {
                 echo "Error updating password: " . $conn->error;
@@ -88,6 +86,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['change_password'])) {
 
 <section class="user-profile">
     <h2>Welcome, <?php echo htmlspecialchars($user['firstname'] . ' ' . $user['lastname']); ?>!</h2>
+    <?php if (isset($_GET['status']) && $_GET['status'] == 'password_changed'): ?>
+        <p style="color: green;">Password changed successfully.</p>
+    <?php endif; ?>
 
     <div class="profile-container">
         <!-- User Information Section -->

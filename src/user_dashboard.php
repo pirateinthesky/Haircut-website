@@ -312,7 +312,7 @@ $email = $_SESSION['email'];
     
             <div class="box">
                  <h3>our services</h3>
-                 <a href="html/services.html?service=checkups"> <i class="fas fa-chevron-right"></i> Free Haircare Test </a>
+                 <a href="html/services.html?service=styling"> <i class="fas fa-chevron-right"></i> Free Haircare Styling </a>
                  <a href="html/services.html?service=branches"> <i class="fas fa-chevron-right"></i> 24/7 Open Branches </a>
                  <a href="html/services.html?service=haircutters"> <i class="fas fa-chevron-right"></i> Expert Haircutters </a>
                  <a href="html/services.html?service=haircare"> <i class="fas fa-chevron-right"></i> Hair Care Products </a>
