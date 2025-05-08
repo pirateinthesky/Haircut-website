@@ -42,11 +42,12 @@ CREATE TABLE IF NOT EXISTS appointments (
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-/* CONTACT MESSAGES TABLE */
-CREATE TABLE IF NOT EXISTS contact_messages (
+/* CONTACT FORMS TABLE (renamed to match PHP + added phone) */
+CREATE TABLE IF NOT EXISTS contact_forms (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
+    phone VARCHAR(20),
     subject VARCHAR(150),
     message TEXT NOT NULL,
     submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
